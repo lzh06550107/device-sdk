@@ -11,21 +11,6 @@ abstract class AbstractModel
 {
 
     /**
-     * @var string 请求类型
-     */
-    public $Name;
-
-    /**
-     * @var string 设备注册接口返回的Session值，开启“注册”功能时校验
-     */
-    public $Session;
-
-    /**
-     * @var string 设备UUD，IE登录摄像机查看：“设置”->“手机监控”->“UUID”
-     */
-    public $UUID;
-
-    /**
      * 内部实现，用户禁止调用
      */
     public function serialize()

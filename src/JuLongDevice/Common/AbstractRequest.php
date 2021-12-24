@@ -26,7 +26,7 @@ class AbstractRequest extends AbstractModel
     public $Sign;
 
     /**
-     * @var array 接口相关的信息字段放Data对象里
+     * @var object 接口相关的信息字段放Data对象里
      */
     public $Data;
 

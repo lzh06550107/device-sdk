@@ -1,7 +1,7 @@
 <?php
 
 use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\EventNotifyRequestRequest;
+use JuLongDevice\Basic\Models\EventNotifyRequest;
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 use JuLongDevice\Common\Profile\HttpProfile;
@@ -31,16 +31,15 @@ try {
     $client = new BasicClient($clientProfile);
 
     // 实例化一个cvm实例信息查询请求对象,每个接口都会对应一个request对象。
-    $req = new EventNotifyRequestRequest();
-    $req->Name = 'eventNotifyRequest';
+    $req = new EventNotifyRequest();
     $req->TimeStamp = time();
     // 需要设备开启注册
     $req->Session = 'fdjlsfjeowjfldsfa';
 
 
-    // 通过client对象调用 EventNotifyRequest 方法发起请求。注意请求方法名与请求对象是对应的
-    // 返回的resp是一个 EventNotifyRequestResponse 类的实例，与请求对象对应
-    $resp = $client->EventNotifyRequest($req);
+    // 通过client对象调用 eventNotify 方法发起请求。注意请求方法名与请求对象是对应的
+    // 返回的resp是一个 eventNotifyResponse 类的实例，与请求对象对应
+    $resp = $client->eventNotify($req);
 
     var_dump($resp);
 
@@ -49,7 +48,7 @@ try {
 
     // 也可以取出单个值。
     // 你可以通过官网接口文档或跳转到response对象的定义处查看返回字段的定义
-    print_r($resp->Name);
+    print_r($resp->getName());
 }catch (DeviceSDKException $e) {
     echo $e;
 }

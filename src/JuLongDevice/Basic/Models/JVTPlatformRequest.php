@@ -8,8 +8,7 @@ use JuLongDevice\Common\AbstractRequest;
  * Created on 2021/12/23 11:10
  * Create by LZH
  */
-class JVTPlatformReqRequest extends AbstractRequest
+class JVTPlatformRequest extends AbstractRequest
 {
-
 
 }

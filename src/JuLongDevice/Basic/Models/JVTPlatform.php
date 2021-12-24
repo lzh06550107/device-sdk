@@ -14,7 +14,7 @@ use JuLongDevice\Common\AbstractModel;
  * Created on 2021/12/24 11:27
  * Create by LZH
  */
-class JVTPlatformReq extends AbstractModel
+class JVTPlatform extends AbstractModel
 {
     public $DomainName;
     public $Port;

@@ -240,7 +240,8 @@ abstract class AbstractClient
     private function formatRequestDataWithMd5($action, $request)
     {
         $param = $request;
-        $param['Name'] = $request["Name"] ?? ucfirst($action);
+        $param['Name'] = $request["Name"] ?? $action;
+        $param['Name'] = $this->formatName($param['Name']);
         $clientProfile = $this->getClientProfile();
         if($clientProfile->getSignMethod()) {
 
@@ -259,6 +260,16 @@ abstract class AbstractClient
             $param["Sign"] = Sign::signMd5($signStr);
         }
         return $param;
+    }
+
+    private function formatName($action) {
+        switch ($action) {
+            case 'JVTPlatform':
+                return $action . 'Req';
+                break;
+            default:
+                return $action . 'Request';
+        }
     }
 
     // 创建新的连接

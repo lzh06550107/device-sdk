@@ -9,15 +9,6 @@ namespace JuLongDevice\Common;
 
 class AbstractResponse extends AbstractModel
 {
-    /**
-     * @var int 错误码
-     */
-    public $ErrorCode;
-
-    /**
-     * @var string 错误消息
-     */
-    public $Result;
 
     /**
      * @var int 返回操作码，判断请求是否成功，见Code说明列表
@@ -28,6 +19,11 @@ class AbstractResponse extends AbstractModel
      * @var string 返回操作信息，Code相关描述信息
      */
     public $Message;
+
+    /**
+     * @var object 响应数据
+     */
+    public $Data;
 
     public function deserialize($param) {
 
@@ -51,6 +47,10 @@ class AbstractResponse extends AbstractModel
 
         if (array_key_exists("Message",$param) and $param["Message"] !== null) {
             $this->Message = $param["Message"];
+        }
+
+        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
+            $this->Data = $param["Data"];
         }
 
     }

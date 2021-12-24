@@ -11,8 +11,9 @@ use JuLongDevice\Common\Profile\ClientProfile;
  * Created on 2021/12/23 10:54
  * Create by LZH
  *
- * @method Models\JVTPlatformReqResponse JVTPlatformReq(Models\JVTPlatformReqRequest $req) 本接口用于激活设备。
- * @method Models\EventNotifyRequestResponse EventNotifyRequest(Models\EventNotifyRequestRequest $req) 主动获取任务请求。
+ * @method Models\JVTPlatformResponse JVTPlatform(Models\JVTPlatformRequest $req) 本接口用于激活设备。
+ * @method Models\EventNotifyResponse eventNotify(Models\EventNotifyRequest $req) 主动获取任务请求。
+ * @method Models\DeviceInfoResponse deviceInfo(Models\DeviceInfoRequest $req) 主动获取任务请求。
  */
 class BasicClient extends AbstractClient
 {
