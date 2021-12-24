@@ -28,7 +28,7 @@ class JVTPlatformReq extends AbstractModel
 
     public function deserialize($param) {
 
-        parent::deserialize();
+        parent::deserialize($param);
 
         if ($param === null) {
             return;
