@@ -3,7 +3,6 @@
 namespace JuLongDevice\Basic;
 
 use JuLongDevice\Common\AbstractClient;
-use JuLongDevice\Common\Credential;
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 
@@ -13,6 +12,7 @@ use JuLongDevice\Common\Profile\ClientProfile;
  * Create by LZH
  *
  * @method Models\JVTPlatformReqResponse JVTPlatformReq(Models\JVTPlatformReqRequest $req) 本接口用于激活设备。
+ * @method Models\EventNotifyRequestResponse EventNotifyRequest(Models\EventNotifyRequestRequest $req) 主动获取任务请求。
  */
 class BasicClient extends AbstractClient
 {

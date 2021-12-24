@@ -16,15 +16,15 @@ use JuLongDevice\Common\AbstractModel;
  */
 class JVTPlatformReq extends AbstractModel
 {
-    public $domainName;
-    public $port;
-    public $registerPath;
-    public $heartbeatPath;
-    public $captureInfoPath;
-    public $deviceSN;
-    public $deviceAdmin;
-    public $devicePassword;
-    public $middleWareAddress;
+    public $DomainName;
+    public $Port;
+    public $RegisterPath;
+    public $HeartbeatPath;
+    public $CaptureInfoPath;
+    public $DeviceSN;
+    public $DeviceAdmin;
+    public $DevicePassword;
+    public $MiddleWareAddress;
 
     public function deserialize($param) {
 
@@ -35,39 +35,39 @@ class JVTPlatformReq extends AbstractModel
         }
 
         if (array_key_exists("DomainName",$param) and $param["DomainName"] !== null) {
-            $this->Message = $param["DomainName"];
+            $this->DomainName = $param["DomainName"];
         }
 
         if (array_key_exists("Port",$param) and $param["Port"] !== null) {
-            $this->Message = $param["Port"];
+            $this->Port = $param["Port"];
         }
 
         if (array_key_exists("RegisterPath",$param) and $param["RegisterPath"] !== null) {
-            $this->Message = $param["RegisterPath"];
+            $this->RegisterPath = $param["RegisterPath"];
         }
 
         if (array_key_exists("HeartbeatPath",$param) and $param["HeartbeatPath"] !== null) {
-            $this->Message = $param["HeartbeatPath"];
+            $this->HeartbeatPath = $param["HeartbeatPath"];
         }
 
         if (array_key_exists("CaptureInfoPath",$param) and $param["CaptureInfoPath"] !== null) {
-            $this->Message = $param["CaptureInfoPath"];
+            $this->CaptureInfoPath = $param["CaptureInfoPath"];
         }
 
         if (array_key_exists("DeviceSN",$param) and $param["DeviceSN"] !== null) {
-            $this->Message = $param["DeviceSN"];
+            $this->DeviceSN = $param["DeviceSN"];
         }
 
         if (array_key_exists("DeviceAdmin",$param) and $param["DeviceAdmin"] !== null) {
-            $this->Message = $param["DeviceAdmin"];
+            $this->DeviceAdmin = $param["DeviceAdmin"];
         }
 
         if (array_key_exists("DevicePassword",$param) and $param["DevicePassword"] !== null) {
-            $this->Message = $param["DevicePassword"];
+            $this->DevicePassword = $param["DevicePassword"];
         }
 
         if (array_key_exists("MiddleWareAddress",$param) and $param["MiddleWareAddress"] !== null) {
-            $this->Message = $param["MiddleWareAddress"];
+            $this->MiddleWareAddress = $param["MiddleWareAddress"];
         }
 
     }

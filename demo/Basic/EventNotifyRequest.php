@@ -1,8 +1,7 @@
 <?php
 
 use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\JVTPlatformReq;
-use JuLongDevice\Basic\Models\JVTPlatformReqRequest;
+use JuLongDevice\Basic\Models\EventNotifyRequestRequest;
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 use JuLongDevice\Common\Profile\HttpProfile;
@@ -10,7 +9,6 @@ use JuLongDevice\Common\Profile\HttpProfile;
 require_once '../../vendor/autoload.php';
 
 try {
-
     // 实例化一个http选项，可选的，没有特殊需求可以跳过
     $httpProfile = new HttpProfile();
     // 配置代理
@@ -33,25 +31,16 @@ try {
     $client = new BasicClient($clientProfile);
 
     // 实例化一个cvm实例信息查询请求对象,每个接口都会对应一个request对象。
-    $req = new JVTPlatformReqRequest();
+    $req = new EventNotifyRequestRequest();
+    $req->Name = 'eventNotifyRequest';
+    $req->TimeStamp = time();
+    // 需要设备开启注册
+    $req->Session = 'fdjlsfjeowjfldsfa';
 
-    // 填充请求参数,这里request对象的成员变量即对应接口的入参
-    $jVTPlatformReq = new JVTPlatformReq();
-    $jVTPlatformReq->DomainName = "http://128.128.20.81";
-    $jVTPlatformReq->Port = 80;
-    $jVTPlatformReq->RegisterPath = "index.php?op=register";
-    $jVTPlatformReq->HeartbeatPath = "index.php?op=online";
-    $jVTPlatformReq->CaptureInfoPath = "index.php?op=compareinfo";
-    $jVTPlatformReq->DeviceSN = "123456789";
-    $jVTPlatformReq->DeviceAdmin = "admin";
-    $jVTPlatformReq->DevicePassword = "admin";
-    $jVTPlatformReq->MiddleWareAddress = "http://128.128.20.81";
 
-    $req->Data = $jVTPlatformReq;
-
-    // 通过client对象调用 JVTPlatformReq 方法发起请求。注意请求方法名与请求对象是对应的
-    // 返回的resp是一个 JVTPlatformReqResponse 类的实例，与请求对象对应
-    $resp = $client->JVTPlatformReq($req);
+    // 通过client对象调用 EventNotifyRequest 方法发起请求。注意请求方法名与请求对象是对应的
+    // 返回的resp是一个 EventNotifyRequestResponse 类的实例，与请求对象对应
+    $resp = $client->EventNotifyRequest($req);
 
     var_dump($resp);
 
@@ -61,7 +50,6 @@ try {
     // 也可以取出单个值。
     // 你可以通过官网接口文档或跳转到response对象的定义处查看返回字段的定义
     print_r($resp->Name);
-} catch(DeviceSDKException $e) {
+}catch (DeviceSDKException $e) {
     echo $e;
 }
-

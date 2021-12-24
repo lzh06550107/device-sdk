@@ -240,11 +240,11 @@ abstract class AbstractClient
     private function formatRequestDataWithMd5($action, $request)
     {
         $param = $request;
-        $param['Name'] = ucfirst($action);
+        $param['Name'] = $request["Name"] ?? ucfirst($action);
         $clientProfile = $this->getClientProfile();
         if($clientProfile->getSignMethod()) {
 
-            $param['Timestamp'] = time();
+            $param['Timestamp'] = $request['Timestamp'] ?? time(); // 如果请求中已经设置，则使用请求中的，否则初始化
             $param['UUID'] = $clientProfile->getUUID();
 
             if ($clientProfile->getDeviceAdmin()) {

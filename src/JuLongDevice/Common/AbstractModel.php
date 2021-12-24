@@ -13,12 +13,12 @@ abstract class AbstractModel
     /**
      * @var string 请求类型
      */
-    public $name;
+    public $Name;
 
     /**
      * @var string 设备注册接口返回的Session值，开启“注册”功能时校验
      */
-    public $session;
+    public $Session;
 
     /**
      * @var string 设备UUD，IE登录摄像机查看：“设置”->“手机监控”->“UUID”
@@ -129,11 +129,11 @@ abstract class AbstractModel
         }
 
         if (array_key_exists("Name",$param) and $param["Name"] !== null) {
-            $this->name = $param["Name"];
+            $this->Name = $param["Name"];
         }
 
         if (array_key_exists("Session",$param) and $param["Session"] !== null) {
-            $this->session = $param["Session"];
+            $this->Session = $param["Session"];
         }
 
         if (array_key_exists("UUID",$param) and $param["UUID"] !== null) {
