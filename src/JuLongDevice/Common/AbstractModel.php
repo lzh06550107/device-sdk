@@ -6,10 +6,13 @@ namespace JuLongDevice\Common;
  * 抽象model类，禁止client引用
  * Created on 2021/12/23 10:02
  * Create by LZH
+ *
+ * @property string $Name 请求名称
+ * @property string $UUID 设备UUID
+ * @property string $Session 设备会话
  */
 abstract class AbstractModel
 {
-
     /**
      * 内部实现，用户禁止调用
      */
@@ -46,6 +49,18 @@ abstract class AbstractModel
                 $memberRet[$name] = $value;
             }
         }
+
+        // 动态属性不能通过反射获取，只能通过对象添加
+        if (property_exists($obj,"Name")) {
+            $memberRet['Name'] = $obj->Name;
+        }
+        if (property_exists($obj,"UUID")) {
+            $memberRet['UUID'] = $obj->UUID;
+        }
+        if (property_exists($obj,"Session")) {
+            $memberRet['Session'] = $obj->Session;
+        }
+
         return $memberRet;
     }
 

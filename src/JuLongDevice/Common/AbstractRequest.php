@@ -7,6 +7,11 @@
 
 namespace JuLongDevice\Common;
 
+/**
+ * 请求抽象类
+ * Created on 2021/12/27 9:18
+ * Create by LZH
+ */
 class AbstractRequest extends AbstractModel
 {
 

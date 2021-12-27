@@ -14,7 +14,7 @@ class DeviceClient
      * 对应http文档协议版本
      * @var string
      */
-    protected $version = "2021-09-08";
+    protected $version = "2021-12-23";
 
     /**
      * 客户端配置

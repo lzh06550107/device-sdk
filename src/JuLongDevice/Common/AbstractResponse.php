@@ -49,6 +49,7 @@ class AbstractResponse extends AbstractModel
             $this->Message = $param["Message"];
         }
 
+        // TODO 应该放到下级实现
         if (array_key_exists("Data",$param) and $param["Data"] !== null) {
             $this->Data = $param["Data"];
         }

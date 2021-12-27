@@ -106,6 +106,7 @@ abstract class AbstractClient
     {
         try {
             $responseData = null;
+            /* @var AbstractModel $request */
             $serializeRequest = $request->serialize(); // 请求对象序列化
 //            $method = $this->getPrivateMethod($request, "arrayMerge");
 //            $serializeRequest = $method->invoke($request, $serializeRequest);
