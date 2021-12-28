@@ -31,7 +31,7 @@ try {
     // 实例化要请求client对象,clientProfile是可选的
     $client = new ParamSettingClient($clientProfile);
 
-    // 实例化一个查询请求对象,每个接口都会对应一个request对象。
+    // 实例化一个请求对象,每个接口都会对应一个request对象。
     $req = new SetAudioParametersRequest();
     $req->TimeStamp = time();
     // 需要设备开启注册

@@ -25,6 +25,11 @@ use JuLongDevice\Common\Profile\ClientProfile;
  * @method Models\SetAudioParametersResponse setAudioParameters(Models\SetAudioParametersRequest $req) 本接口用于设置音频参数
  * @method Models\GetMQTTParametersResponse getMQTTParameters(Models\GetMQTTParametersRequest $req) 本接口用于获取MQTT参数
  * @method Models\SetMQTTParametersResponse setMQTTParameters(Models\SetMQTTParametersRequest $req) 本接口用于设置MQTT参数
+ * @method Models\GetSIMCardResponse getSIMCard(Models\GetSIMCardRequest $req) 本接口用于获取SIM卡（4G/5G）参数
+ * @method Models\SetSIMCardResponse setSIMCard(Models\SetSIMCardRequest $req) 本接口用于设置SIM卡（4G/5G）参数
+ * @method Models\SetUserPasswordResponse setUserPassword(Models\SetUserPasswordRequest $req) 本接口用于设置用户密码参数
+ * @method Models\GetGPSParametersResponse getGPSParameters(Models\GetGPSParametersRequest $req) 本接口用于获取GPS信息参数
+ * @method Models\SetGPSParametersResponse setGPSParameters(Models\SetGPSParametersRequest $req) 本接口用于设置GPS信息参数
  */
 class ParamSettingClient extends AbstractClient
 {

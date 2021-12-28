@@ -3,7 +3,8 @@
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\ParamSetting\Models\GetHTTPParametersRequest;
+use JuLongDevice\ParamSetting\Models\SetUserPasswordRequest;
+use JuLongDevice\ParamSetting\Models\UserPassword;
 use JuLongDevice\ParamSetting\ParamSettingClient;
 
 require_once '../../vendor/autoload.php';
@@ -31,15 +32,24 @@ try {
     $client = new ParamSettingClient($clientProfile);
 
     // 实例化一个请求对象,每个接口都会对应一个request对象。
-    $req = new GetHTTPParametersRequest();
+    $req = new SetUserPasswordRequest();
     $req->TimeStamp = time();
     // 需要设备开启注册
     $req->Session = 'fdjlsfjeowjfldsfa';
 
+    $userPassword = new UserPassword();
+    $userPassword->VerificationMode = 1;
+    $userPassword->EncryptionMode = 0;
+    $userPassword->OldUserName = "admin";
+    $userPassword->OldPassword = "admin";
+    $userPassword->NewUserName = "admin888";
+    $userPassword->NewPassword = "admin888";
 
-    // 通过client对象调用 getHTTPParameters 方法发起请求。注意请求方法名与请求对象是对应的
-    // 返回的resp是一个 getHTTPParametersResponse 类的实例，与请求对象对应
-    $resp = $client->getHTTPParameters($req);
+    $req->Data = $userPassword;
+
+    // 通过client对象调用 setUserPassword 方法发起请求。注意请求方法名与请求对象是对应的
+    // 返回的resp是一个 SetUserPasswordResponse 类的实例，与请求对象对应
+    $resp = $client->setUserPassword($req);
 
     var_dump($resp);
 
@@ -50,5 +60,5 @@ try {
     // 你可以通过官网接口文档或跳转到response对象的定义处查看返回字段的定义
     print_r($resp->getName());
 } catch (DeviceSDKException $e) {
-
+    echo $e;
 }
