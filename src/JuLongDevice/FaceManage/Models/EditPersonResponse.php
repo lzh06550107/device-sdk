@@ -1,7 +1,7 @@
 <?php
 /**
  * 文件描述
- * Created on 2021/12/28 18:25
+ * Created on 2021/12/29 16:37
  * Create by LZH
  */
 
@@ -9,7 +9,7 @@ namespace JuLongDevice\FaceManage\Models;
 
 use JuLongDevice\FaceManage\PersonType;
 
-class AddPersonResponse
+class EditPersonResponse
 {
     /**
      * @var string 动作
@@ -19,7 +19,10 @@ class AddPersonResponse
      * @var PersonType 名单类型
      */
     public $PersonType;
-
+    /**
+     * @var int 是否编辑照片
+     */
+    public $ChangePhoto;
     /**
      * @var PersonInfo 添加的人员信息
      */
@@ -42,6 +45,10 @@ class AddPersonResponse
 
         if (array_key_exists("PersonType",$param) and $param["PersonType"] !== null) {
             $this->PersonType = $param['PersonType'];
+        }
+
+        if (array_key_exists("ChangePhoto",$param) and $param["ChangePhoto"] !== null) {
+            $this->ChangePhoto = $param['ChangePhoto'];
         }
 
         if (array_key_exists("PersonInfo",$param) and $param["PersonInfo"] !== null) {

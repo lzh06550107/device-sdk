@@ -1,15 +1,16 @@
 <?php
 /**
  * 文件描述
- * Created on 2021/12/28 18:25
+ * Created on 2021/12/29 17:54
  * Create by LZH
  */
 
 namespace JuLongDevice\FaceManage\Models;
 
+use JuLongDevice\FaceManage\PersonIdentity;
 use JuLongDevice\FaceManage\PersonType;
 
-class AddPersonResponse
+class DeletePersonListResponse
 {
     /**
      * @var string 动作
@@ -21,13 +22,10 @@ class AddPersonResponse
     public $PersonType;
 
     /**
-     * @var PersonInfo 添加的人员信息
+     * @var PersonIdentity 人员身份：用于名单分类
      */
-    public $PersonInfo;
-    /**
-     * @var int 内部错误码
-     */
-    public $Result;
+    public $PersonIdentity;
+
 
     public function deserialize($param)
     {
@@ -44,14 +42,8 @@ class AddPersonResponse
             $this->PersonType = $param['PersonType'];
         }
 
-        if (array_key_exists("PersonInfo",$param) and $param["PersonInfo"] !== null) {
-            $personInfo = new PersonInfo();
-            $personInfo->deserialize($param['PersonInfo']);
-            $this->PersonInfo = $personInfo;
-        }
-
-        if (array_key_exists("Result",$param) and $param["Result"] !== null) {
-            $this->Result = $param['Result'];
+        if (array_key_exists("PersonIdentity",$param) and $param["PersonIdentity"] !== null) {
+            $this->PersonIdentity = $param['PersonIdentity'];
         }
 
     }
