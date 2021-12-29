@@ -28,8 +28,6 @@ class JVTPlatform extends AbstractModel
 
     public function deserialize($param) {
 
-        parent::deserialize($param);
-
         if ($param === null) {
             return;
         }

@@ -1,10 +1,12 @@
 <?php
 
-use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\DeviceInfoRequest;
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDevice\FaceManage\FaceManageClient;
+use JuLongDevice\FaceManage\Models\AddPersonInfo;
+use JuLongDevice\FaceManage\Models\AddPersonRequest;
+use JuLongDevice\FaceManage\PersonType;
 
 require_once '../../vendor/autoload.php';
 
@@ -28,18 +30,25 @@ try {
     $clientProfile->setHttpProfile($httpProfile);
 
     // 实例化要请求client对象,clientProfile是可选的
-    $client = new BasicClient($clientProfile);
+    $client = new FaceManageClient($clientProfile);
 
     // 实例化一个请求对象,每个接口都会对应一个request对象。
-    $req = new DeviceInfoRequest();
+    $req = new AddPersonRequest();
     $req->TimeStamp = time();
     // 需要设备开启注册
     $req->Session = 'fdjlsfjeowjfldsfa';
 
+    $req->PersonType = PersonType::$ALL_FACE;
+    $addPersonInfo = new AddPersonInfo();
+    $addPersonInfo->PersonCover = 1;
+    $addPersonInfo->PersonId = "1";
+    $addPersonInfo->PersonName = "lzh";
 
-    // 通过client对象调用 eventNotify 方法发起请求。注意请求方法名与请求对象是对应的
-    // 返回的resp是一个 eventNotifyResponse 类的实例，与请求对象对应
-    $resp = $client->deviceInfo($req);
+    $req->PersonInfo = $addPersonInfo;
+
+    // 通过client对象调用 personList 方法发起请求。注意请求方法名与请求对象是对应的
+    // 返回的resp是一个 PersonListResponse 类的实例，与请求对象对应
+    $resp = $client->personList($req);
 
     var_dump($resp);
 

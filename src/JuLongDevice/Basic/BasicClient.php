@@ -14,6 +14,13 @@ use JuLongDevice\Common\Profile\ClientProfile;
  * @method Models\JVTPlatformResponse JVTPlatform(Models\JVTPlatformRequest $req) 本接口用于激活设备。
  * @method Models\EventNotifyResponse eventNotify(Models\EventNotifyRequest $req) 主动获取任务请求。
  * @method Models\DeviceInfoResponse deviceInfo(Models\DeviceInfoRequest $req) 主动获取任务请求。
+ * @method Models\IOControlResponse IOControl(Models\IOControlRequest $req) IO控制（远程开门）。
+ * @method Models\TimeSynchronizationResponse timeSynchronization(Models\TimeSynchronizationRequest $req) 时间同步。
+ * @method Models\RestartResponse restart(Models\RestartRequest $req) 设备重启。
+ * @method Models\RestartTimeResponse restartTime(Models\RestartTimeRequest $req) 设备定时重启。
+ * @method Models\RestoreFactoryResponse restoreFactory(Models\RestoreFactoryRequest $req) 恢复出厂设置。
+ * @method Models\UpgradeDeviceResponse upgradeDevice(Models\UpgradeDeviceRequest $req) 恢复出厂设置。
+ * @method Models\ActiveCaptureResponse ActiveCapture(Models\ActiveCaptureRequest $req) 主动抓拍。
  */
 class BasicClient extends AbstractClient
 {
@@ -25,7 +32,7 @@ class BasicClient extends AbstractClient
     /**
      * @var string
      */
-    protected $version = "2021-09-08";
+    protected $version = "2021-12-23";
 
     /**
      * @param ClientProfile|null $profile

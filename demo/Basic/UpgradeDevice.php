@@ -1,7 +1,8 @@
 <?php
 
 use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\DeviceInfoRequest;
+use JuLongDevice\Basic\Models\UpgradeDevice;
+use JuLongDevice\Basic\Models\UpgradeDeviceRequest;
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 use JuLongDevice\Common\Profile\HttpProfile;
@@ -31,15 +32,20 @@ try {
     $client = new BasicClient($clientProfile);
 
     // 实例化一个请求对象,每个接口都会对应一个request对象。
-    $req = new DeviceInfoRequest();
+    $req = new UpgradeDeviceRequest();
     $req->TimeStamp = time();
     // 需要设备开启注册
     $req->Session = 'fdjlsfjeowjfldsfa';
 
+    $upgradeDevice = new UpgradeDevice();
+    $upgradeDevice->Version = "X.X.X.X";
+    $upgradeDevice->Url = "http://xxxx/pack.bin";
 
-    // 通过client对象调用 eventNotify 方法发起请求。注意请求方法名与请求对象是对应的
-    // 返回的resp是一个 eventNotifyResponse 类的实例，与请求对象对应
-    $resp = $client->deviceInfo($req);
+    $req->Data = $upgradeDevice;
+
+    // 通过client对象调用 upgradeDevice 方法发起请求。注意请求方法名与请求对象是对应的
+    // 返回的resp是一个 UpgradeDeviceResponse 类的实例，与请求对象对应
+    $resp = $client->upgradeDevice($req);
 
     var_dump($resp);
 
