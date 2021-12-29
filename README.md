@@ -168,7 +168,16 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
 - getGPSParametersRequest：GPS信息参数获取
 - setGPSParametersRequest：GPS参数设置
 
+### 管理名单库接口
 
+- getPersonList：获取名单列表
+- getPerson：获取人员信息
+- addPerson：添加人员信息
+- editPerson：编辑人员信息
+- deletePerson：删除人员信息
+- deletePersonList：删除名单库(名单分组)
+- addPersons：批量添加人员
+- deletePersons：批量删除人员
 
 ## 注意
 
