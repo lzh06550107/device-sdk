@@ -146,6 +146,8 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
 
 ### 云台控制
 
+- 未实现
+
 ### 参数获取和设置接口
 
 - getHTTPParametersRequest：HTTP参数获取
