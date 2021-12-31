@@ -179,6 +179,15 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
 - addPersons：批量添加人员
 - deletePersons：批量删除人员
 
+### 人脸比对功能接口
+
+- historyRecordRequest：获取历史识别记录
+- deleteRecordRequest：删除历史识别记录
+- faceFeatureValueRequest：人脸图片获取特征值
+- faceSearchRequest：人脸搜索名单库
+- faceSimilarityRequest：人脸比较相似度
+- detectFaceRequest：图片检测人脸
+
 ## 注意
 
 - composer require guzzlehttp/guzzle 兼容tp/laveral
