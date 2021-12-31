@@ -1,16 +1,15 @@
 <?php
 
-use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\JVTPlatform;
-use JuLongDevice\Basic\Models\JVTPlatformRequest;
 use JuLongDevice\Common\Exception\DeviceSDKException;
 use JuLongDevice\Common\Profile\ClientProfile;
 use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDevice\FaceCompare\FaceCompareClient;
+use JuLongDevice\FaceCompare\Models\HistoryRecord;
+use JuLongDevice\FaceCompare\Models\HistoryRecordRequest;
 
 require_once '../../vendor/autoload.php';
 
 try {
-
     // 实例化一个http选项，可选的，没有特殊需求可以跳过
     $httpProfile = new HttpProfile();
     // 配置代理
@@ -30,28 +29,26 @@ try {
     $clientProfile->setHttpProfile($httpProfile);
 
     // 实例化要请求client对象,clientProfile是可选的
-    $client = new BasicClient($clientProfile);
+    $client = new FaceCompareClient($clientProfile);
 
-    // 实例化一个请求对象,每个接口都会对应一个request对象。
-    $req = new JVTPlatformRequest();
+    // 实例化一个查询请求对象,每个接口都会对应一个request对象。
+    $req = new HistoryRecordRequest();
+    $req->TimeStamp = time();
+    // 需要设备开启注册
+    $req->Session = 'fdjlsfjeowjfldsfa';
 
-    // 填充请求参数,这里request对象的成员变量即对应接口的入参
-    $jVTPlatformReq = new JVTPlatform();
-    $jVTPlatformReq->DomainName = "http://128.128.20.81"; // 如果是本地平台，这里是平台所在服务器地址；如果是云端平台，这里是中间件所在云服务器地址
-    $jVTPlatformReq->Port = 80; // 注意端口也要修改
-    $jVTPlatformReq->RegisterPath = "index.php?op=register";
-    $jVTPlatformReq->HeartbeatPath = "index.php?op=online";
-    $jVTPlatformReq->CaptureInfoPath = "index.php?op=compareInfo";
-    $jVTPlatformReq->DeviceSN = "123456789";
-    $jVTPlatformReq->DeviceAdmin = "admin";
-    $jVTPlatformReq->DevicePassword = "admin";
-    $jVTPlatformReq->MiddleWareAddress = "http://128.128.20.81";
+    $historyRecord = new HistoryRecord();
+    $historyRecord->Action = 1;
+    $historyRecord->BeginTime = "2021-01-01 00:00:00";
+    $historyRecord->EndTime = "2021-12-31 23:59:00";
+    $historyRecord->SearchType = 0;
+    $historyRecord->PersonId = "1";
 
-    $req->Data = $jVTPlatformReq;
+    $req->Data = $historyRecord;
 
-    // 通过client对象调用 JVTPlatform 方法发起请求。注意请求方法名与请求对象是对应的
-    // 返回的resp是一个 JVTPlatformResponse 类的实例，与请求对象对应
-    $resp = $client->JVTPlatform($req);
+    // 通过client对象调用 historyRecord 方法发起请求。注意请求方法名与请求对象是对应的
+    // 返回的resp是一个 HistoryRecordResponse 类的实例，与请求对象对应
+    $resp = $client->historyRecord($req);
 
     var_dump($resp);
 
@@ -60,8 +57,7 @@ try {
 
     // 也可以取出单个值。
     // 你可以通过官网接口文档或跳转到response对象的定义处查看返回字段的定义
-    print_r($resp->Name);
-} catch(DeviceSDKException $e) {
+    print_r($resp->getName());
+} catch (DeviceSDKException $e) {
     echo $e;
 }
-

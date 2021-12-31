@@ -13,9 +13,11 @@ switch ($operator) {
     case 'online':
         $result = online($actData);
         break;
-    case 'compareinfo':
-        $result = compareinfo($actData);
+    case 'compareInfo':
+        $result = compareInfo($actData);
         break;
+    case 'historyRecord':
+        $result = historyRecord($actData);
     default:
         echo '有请求！';
 }
@@ -31,6 +33,8 @@ echo json_encode($result, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
 function register($actData) {
 
     if ($actData['Name'] == 'registerRequest') {
+
+        file_put_contents(__DIR__ . "/logs/register.log", print_r($actData,true), FILE_APPEND);
 
         //定义返回的数据
         $retArray['Name'] = 'registerResponse';
@@ -50,6 +54,8 @@ function online($actData) {
 
     if ($actData ['Name'] == 'heartbeatRequest') {
 
+        file_put_contents(__DIR__ . "/logs/heartbeat.log", print_r($actData,true), FILE_APPEND);
+
         //定义返回的数据
         $retArray['Name'] = 'heartbeatResponse';
         $retArray['TimeStamp'] = time();
@@ -65,12 +71,33 @@ function online($actData) {
 }
 
 // 抓拍信息上传
-function compareinfo($actData)
+function compareInfo($actData)
 {
     if ($actData['Name'] == 'captureInfoRequest') {
 
+        file_put_contents(__DIR__ . "/logs/captureInfo.log", print_r($actData,true), FILE_APPEND);
+
         //定义返回的数据
         $retArray['Name'] = 'captureInfoResponse';
+        $retArray['TimeStamp'] = time();
+        $retArray['Code'] = 1;
+        $retArray['Message'] = 'ok';
+
+        $retArray['Session'] = 'fdjlsfjeowjfldsfa'; // 设置响应包中session
+
+        return $retArray;
+    }
+}
+
+// 上报历史抓拍记录
+function historyRecord($actData)
+{
+    if ($actData['Name'] == 'recordInfoRequest') {
+
+        file_put_contents(__DIR__ . "/logs/historyRecord.log", print_r($actData,true), FILE_APPEND);
+
+        //定义返回的数据
+        $retArray['Name'] = 'recordInfoResponse';
         $retArray['TimeStamp'] = time();
         $retArray['Code'] = 1;
         $retArray['Message'] = 'ok';

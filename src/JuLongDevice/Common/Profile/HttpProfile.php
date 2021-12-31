@@ -96,7 +96,7 @@ class HttpProfile
 
     /**
      * 设置请求接入点域名
-     * @param string $endpoint 请求接入点域名(xx.[region.]tencentcloudapi.com)
+     * @param string $endpoint 请求链接
      */
     public function setEndpoint($endpoint)
     {
