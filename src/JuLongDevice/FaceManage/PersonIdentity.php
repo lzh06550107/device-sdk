@@ -29,4 +29,16 @@ class PersonIdentity
      * @var int 访客
      */
     public static $VISITOR  = 4;
+
+    public static function getPersonGroupNameById(int $id) {
+        $GroupNames = [
+            "所有分组",
+            "老师",
+            "走读学生",
+            "寄宿学生",
+            "访客"
+        ];
+        return $GroupNames[$id] ?? '未知分组';
+
+    }
 }
