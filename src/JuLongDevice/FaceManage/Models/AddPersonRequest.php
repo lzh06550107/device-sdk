@@ -7,6 +7,8 @@
 
 namespace JuLongDevice\FaceManage\Models;
 
+use JuLongDevice\AccessControlPassword\Models\PasswordListRequest;
+
 /**
  * 添加人员信息
  * Created on 2021/12/28 18:06
@@ -16,7 +18,7 @@ namespace JuLongDevice\FaceManage\Models;
  * @property int $PersonType 名单类型
  * @property AddPersonInfo $PersonInfo 添加人员信息
  */
-class AddPersonRequest extends PersonListRequest
+class AddPersonRequest extends PasswordListRequest
 {
 
     public function __construct()

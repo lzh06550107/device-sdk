@@ -45,7 +45,7 @@ try {
     $strategyInfo->AccessNumLimit = 1;
     $strategyInfo->AllowAccessNum = 5;
     $strategyInfo->StartTime = "2021-01-01 00:00:00";
-    $strategyInfo->EndTime = "2021-12-12 23:59:59";
+    $strategyInfo->EndTime = "2022-12-12 23:59:59";
     $strategyInfo->Monday = [new TimePeriod("09:00:00", "14:30:00")];
     $strategyInfo->Tuesday = [new TimePeriod("09:00:00", "14:30:00")];
     $strategyInfo->Wednesday = [new TimePeriod("09:00:00", "14:30:00")];
