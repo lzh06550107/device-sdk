@@ -190,7 +190,49 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
 - faceSimilarityRequest：人脸比较相似度
 - detectFaceRequest：图片检测人脸
 
+### 通行策略管理接口
+
+- addStrategys：添加/修改通行策略
+- deleteStrategys：删除通行策略
+- getStrategys：查询通行策略
+- getIdentifyStrategys：获取人员分组关联通行策略
+- setIdentifyStrategys：设置人员分组关联通行策略
+- getPersonsByStrategy：获取通行策略绑定人员列表
+- personBindStrategys：人员绑定通行策略
+- personUnBindStrategys：人员解绑通行策略
+- identityChangeRequest：人员身份替换（人员换组）
+
+### NVR管理接口
+
+- searchVideoRequest：搜索录像列表（仅NVR支持）
+- searchPictureRequest：搜索图片列表（仅NVR支持）
+
+### 广告和公告功能接口
+
+未实现
+
+### 管理门禁密码接口
+
+- addPasswords：批量添加密码
+- editPasswords：批量修改密码
+- deletePasswords：批量删除密码
+- getPasswords：批量查询密码
+
+### 健康码信息接口
+
+- getHealthCodeRequest：获取健康码
+
+### 分班播报管理接口
+
+- changeReportRequest：批量更改播报机编号
+
+### 上传文件接口
+
+- searchVideoRecordRequest：搜索录像文件
+- fileUploadRequest：上传录像文件
+
 ## 注意
+不同的框架请依赖不同的guzzle包：
 
 - composer require guzzlehttp/guzzle 兼容tp/laveral
 - composer require yurunsoft/guzzle-swoole 兼容基于swoole的框架
