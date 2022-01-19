@@ -61,7 +61,7 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
       print_r($resp->Name);
   
   } catch(DeviceSDKException $e) {
-  echo $e;
+    echo $e;
   }
   ```
 
