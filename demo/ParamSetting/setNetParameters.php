@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\ParamSetting\Models\NetParameters;
-use JuLongDevice\ParamSetting\Models\SetNetParametersRequest;
-use JuLongDevice\ParamSetting\ParamSettingClient;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\ParamSetting\Models\NetParameters;
+use JuLongDeviceHttp\ParamSetting\Models\SetNetParametersRequest;
+use JuLongDeviceHttp\ParamSetting\ParamSettingClient;
 
 require_once '../../vendor/autoload.php';
 

@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\RestartTime;
-use JuLongDevice\Basic\Models\RestartTimeRequest;
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\Basic\BasicClient;
+use JuLongDeviceHttp\Basic\Models\RestartTime;
+use JuLongDeviceHttp\Basic\Models\RestartTimeRequest;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
 
 require_once '../../vendor/autoload.php';
 

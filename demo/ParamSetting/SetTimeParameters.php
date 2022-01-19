@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\ParamSetting\Models\SetTimeParametersRequest;
-use JuLongDevice\ParamSetting\Models\TimeParameters;
-use JuLongDevice\ParamSetting\ParamSettingClient;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\ParamSetting\Models\SetTimeParametersRequest;
+use JuLongDeviceHttp\ParamSetting\Models\TimeParameters;
+use JuLongDeviceHttp\ParamSetting\ParamSettingClient;
 
 require_once '../../vendor/autoload.php';
 

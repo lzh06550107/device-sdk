@@ -1,12 +1,12 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\FaceManage\FaceManageClient;
-use JuLongDevice\FaceManage\Models\DeletePersonsRequest;
-use JuLongDevice\FaceManage\Models\PersonInfo;
-use JuLongDevice\FaceManage\PersonType;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\FaceManage\FaceManageClient;
+use JuLongDeviceHttp\FaceManage\Models\DeletePersonsRequest;
+use JuLongDeviceHttp\FaceManage\Models\PersonInfo;
+use JuLongDeviceHttp\FaceManage\PersonType;
 
 require_once '../../vendor/autoload.php';
 

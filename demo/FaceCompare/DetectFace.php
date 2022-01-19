@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\FaceCompare\FaceCompareClient;
-use JuLongDevice\FaceCompare\Models\DetectFace;
-use JuLongDevice\FaceCompare\Models\DetectFaceRequest;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\FaceCompare\FaceCompareClient;
+use JuLongDeviceHttp\FaceCompare\Models\DetectFace;
+use JuLongDeviceHttp\FaceCompare\Models\DetectFaceRequest;
 
 require_once '../../vendor/autoload.php';
 

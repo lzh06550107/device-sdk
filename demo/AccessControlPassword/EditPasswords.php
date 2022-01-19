@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\AccessControlPassword\AccessControlPasswordClient;
-use JuLongDevice\AccessControlPassword\Models\EditPasswordsRequest;
-use JuLongDevice\AccessControlPassword\Models\PasswordInfo;
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\AccessControlPassword\AccessControlPasswordClient;
+use JuLongDeviceHttp\AccessControlPassword\Models\EditPasswordsRequest;
+use JuLongDeviceHttp\AccessControlPassword\Models\PasswordInfo;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
 
 require_once '../../vendor/autoload.php';
 

@@ -1,13 +1,13 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\ParamSetting\Models\CaptureContent;
-use JuLongDevice\ParamSetting\Models\HTTPParameters;
-use JuLongDevice\ParamSetting\Models\PictureData;
-use JuLongDevice\ParamSetting\Models\SetHTTPParametersRequest;
-use JuLongDevice\ParamSetting\ParamSettingClient;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\ParamSetting\Models\CaptureContent;
+use JuLongDeviceHttp\ParamSetting\Models\HTTPParameters;
+use JuLongDeviceHttp\ParamSetting\Models\PictureData;
+use JuLongDeviceHttp\ParamSetting\Models\SetHTTPParametersRequest;
+use JuLongDeviceHttp\ParamSetting\ParamSettingClient;
 
 require_once '../../vendor/autoload.php';
 

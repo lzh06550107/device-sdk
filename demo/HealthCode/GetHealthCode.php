@@ -1,10 +1,10 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\HealthCode\HealthCodeClient;
-use JuLongDevice\HealthCode\Models\GetHealthCodeRequest;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\HealthCode\HealthCodeClient;
+use JuLongDeviceHttp\HealthCode\Models\GetHealthCodeRequest;
 
 require_once '../../vendor/autoload.php';
 

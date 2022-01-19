@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\AccessStrategy\AccessStrategyClient;
-use JuLongDevice\AccessStrategy\Models\PersonStrategys;
-use JuLongDevice\AccessStrategy\Models\PersonBindStrategysRequest;
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\AccessStrategy\AccessStrategyClient;
+use JuLongDeviceHttp\AccessStrategy\Models\PersonStrategys;
+use JuLongDeviceHttp\AccessStrategy\Models\PersonBindStrategysRequest;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
 
 require_once '../../vendor/autoload.php';
 

@@ -1,13 +1,13 @@
 <?php
 
-use JuLongDevice\AccessStrategy\AccessStrategyClient;
-use JuLongDevice\AccessStrategy\Models\AddStrategysRequest;
-use JuLongDevice\AccessStrategy\Models\HolidayInfo;
-use JuLongDevice\AccessStrategy\Models\StrategyInfo;
-use JuLongDevice\AccessStrategy\Models\TimePeriod;
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\AccessStrategy\AccessStrategyClient;
+use JuLongDeviceHttp\AccessStrategy\Models\AddStrategysRequest;
+use JuLongDeviceHttp\AccessStrategy\Models\HolidayInfo;
+use JuLongDeviceHttp\AccessStrategy\Models\StrategyInfo;
+use JuLongDeviceHttp\AccessStrategy\Models\TimePeriod;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
 
 require_once '../../vendor/autoload.php';
 

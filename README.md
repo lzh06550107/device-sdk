@@ -13,12 +13,12 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
     ```php
   <?php
   
-  use JuLongDevice\Basic\BasicClient;
-  use JuLongDevice\Basic\Models\JVTPlatform;
-  use JuLongDevice\Basic\Models\JVTPlatformRequest;
-  use JuLongDevice\Common\Exception\DeviceSDKException;
-  use JuLongDevice\Common\Profile\ClientProfile;
-  use JuLongDevice\Common\Profile\HttpProfile;
+  use JuLongDeviceHttp\Basic\BasicClient;
+  use JuLongDeviceHttp\Basic\Models\JVTPlatform;
+  use JuLongDeviceHttp\Basic\Models\JVTPlatformRequest;
+  use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+  use JuLongDeviceHttp\Common\Profile\ClientProfile;
+  use JuLongDeviceHttp\Common\Profile\HttpProfile;
   
   require_once '../../vendor/autoload.php';
   
@@ -82,11 +82,11 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
   ```php
   <?php
   
-  use JuLongDevice\Basic\BasicClient;
-  use JuLongDevice\Basic\Models\EventNotifyRequest;
-  use JuLongDevice\Common\Exception\DeviceSDKException;
-  use JuLongDevice\Common\Profile\ClientProfile;
-  use JuLongDevice\Common\Profile\HttpProfile;
+  use JuLongDeviceHttp\Basic\BasicClient;
+  use JuLongDeviceHttp\Basic\Models\EventNotifyRequest;
+  use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+  use JuLongDeviceHttp\Common\Profile\ClientProfile;
+  use JuLongDeviceHttp\Common\Profile\HttpProfile;
   
   require_once '../../vendor/autoload.php';
   

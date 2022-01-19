@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\UpgradeDevice;
-use JuLongDevice\Basic\Models\UpgradeDeviceRequest;
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\Basic\BasicClient;
+use JuLongDeviceHttp\Basic\Models\UpgradeDevice;
+use JuLongDeviceHttp\Basic\Models\UpgradeDeviceRequest;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
 
 require_once '../../vendor/autoload.php';
 
@@ -15,7 +15,7 @@ try {
     // 配置代理
     // $httpProfile->setProxy("https://ip:port");
     $httpProfile->setReqMethod(HttpProfile::$REQ_POST);  // post请求(默认为post请求)
-    $httpProfile->setReqTimeout(30);    // 请求超时时间，单位为秒(默认60秒)
+    $httpProfile->setReqTimeout(300);    // 请求超时时间，单位为秒(默认60秒)
     $httpProfile->setEndpoint("128.128.20.131:8011");  // 指定接入设备地址
     $httpProfile->setProtocol(HttpProfile::$REQ_HTTP);
 
@@ -38,8 +38,8 @@ try {
     $req->Session = 'fdjlsfjeowjfldsfa';
 
     $upgradeDevice = new UpgradeDevice();
-    $upgradeDevice->Version = "X.X.X.X";
-    $upgradeDevice->Url = "http://xxxx/pack.bin";
+    $upgradeDevice->Version = "17.17.64.16";
+    $upgradeDevice->Url = "http://128.128.20.81:8080/demoServer/17.17.64.16_sdk1.2.1_0616_updata.bin";
 
     $req->Data = $upgradeDevice;
 

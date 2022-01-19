@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Basic\BasicClient;
-use JuLongDevice\Basic\Models\RestoreFactory;
-use JuLongDevice\Basic\Models\RestoreFactoryRequest;
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\Basic\BasicClient;
+use JuLongDeviceHttp\Basic\Models\RestoreFactory;
+use JuLongDeviceHttp\Basic\Models\RestoreFactoryRequest;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
 
 require_once '../../vendor/autoload.php';
 

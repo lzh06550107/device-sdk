@@ -1,11 +1,11 @@
 <?php
 
-use JuLongDevice\Common\Exception\DeviceSDKException;
-use JuLongDevice\Common\Profile\ClientProfile;
-use JuLongDevice\Common\Profile\HttpProfile;
-use JuLongDevice\NVRManage\Models\SearchVideoParam;
-use JuLongDevice\NVRManage\Models\SearchVideoRequest;
-use JuLongDevice\NVRManage\NVRManageClient;
+use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
+use JuLongDeviceHttp\Common\Profile\ClientProfile;
+use JuLongDeviceHttp\Common\Profile\HttpProfile;
+use JuLongDeviceHttp\NVRManage\Models\SearchVideoParam;
+use JuLongDeviceHttp\NVRManage\Models\SearchVideoRequest;
+use JuLongDeviceHttp\NVRManage\NVRManageClient;
 
 require_once '../../vendor/autoload.php';
 
