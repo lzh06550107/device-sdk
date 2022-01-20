@@ -81,75 +81,123 @@ final class HttpClientBuilder
     }
 
     /**
+     * @param $clientProfile
+     * @return BasicClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getBaseClient(): BasicClient
+    public function getBaseClient($clientProfile = null): BasicClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new BasicClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new BasicClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return AccessControlPasswordClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getAccessControlPasswordClient(): AccessControlPasswordClient
+    public function getAccessControlPasswordClient($clientProfile = null): AccessControlPasswordClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new AccessControlPasswordClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new AccessControlPasswordClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return AccessStrategyClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getAccessStrategyClient(): AccessStrategyClient
+    public function getAccessStrategyClient($clientProfile = null): AccessStrategyClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new AccessStrategyClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new AccessStrategyClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return FaceCompareClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getFaceCompareClient(): FaceCompareClient
+    public function getFaceCompareClient($clientProfile = null): FaceCompareClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new FaceCompareClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new FaceCompareClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return FaceManageClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getFaceManageClient(): FaceManageClient
+    public function getFaceManageClient($clientProfile = null): FaceManageClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new FaceManageClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new FaceManageClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return HealthCodeClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getHealthCodeClient(): HealthCodeClient
+    public function getHealthCodeClient($clientProfile = null): HealthCodeClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new HealthCodeClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new HealthCodeClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return NVRManageClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getNVRManageClient(): NVRManageClient
+    public function getNVRManageClient($clientProfile = null): NVRManageClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new NVRManageClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new NVRManageClient($clientProfile ?: $this->clientProfile);
     }
 
     /**
+     * @param $clientProfile
+     * @return ParamSettingClient
      * @throws Common\Exception\DeviceSDKException
+     * @author LZH
+     * @since 2022/01/20
      */
-    public function getParamSettingClient(): ParamSettingClient
+    public function getParamSettingClient($clientProfile = null): ParamSettingClient
     {
-        $this->clientProfile->setHttpProfile($this->httpProfile);
-        return new ParamSettingClient($this->clientProfile);
+        if (empty($clientProfile)) {
+            $this->clientProfile->setHttpProfile($this->httpProfile);
+        }
+        return new ParamSettingClient($clientProfile ?: $this->clientProfile);
     }
 
 }

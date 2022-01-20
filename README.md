@@ -22,6 +22,8 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
   use JuLongDeviceHttp\Common\Profile\HttpProfile;
   use JuLongDeviceHttp\HttpClient;
   
+  require_once '../../vendor/autoload.php';
+  
   HttpClient::configurator()->getHttpProfile()->setProtocol(HttpProfile::$REQ_HTTP)
       ->setEndpoint("128.128.20.131:8011")->setReqMethod(HttpProfile::$REQ_POST)
       ->setReqTimeout(30)

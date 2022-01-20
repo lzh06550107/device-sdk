@@ -7,6 +7,8 @@ use JuLongDeviceHttp\Common\Profile\ClientProfile;
 use JuLongDeviceHttp\Common\Profile\HttpProfile;
 use JuLongDeviceHttp\HttpClient;
 
+require_once '../vendor/autoload.php';
+
 HttpClient::configurator()->getHttpProfile()->setProtocol(HttpProfile::$REQ_HTTP)
     ->setEndpoint("128.128.20.131:8011")->setReqMethod(HttpProfile::$REQ_POST)
     ->setReqTimeout(30)
