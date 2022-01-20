@@ -14,7 +14,7 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
   方法一：
   ```php
   <?php
-
+  
   use JuLongDeviceHttp\Basic\Models\JVTPlatform;
   use JuLongDeviceHttp\Basic\Models\JVTPlatformRequest;
   use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
@@ -22,12 +22,12 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
   use JuLongDeviceHttp\Common\Profile\HttpProfile;
   use JuLongDeviceHttp\HttpClient;
   
-  DeviceClient::configurator()->getHttpProfile()->setProtocol(HttpProfile::$REQ_HTTP)
-  ->setEndpoint("128.128.20.131:8011")->setReqMethod(HttpProfile::$REQ_POST)
-  ->setReqTimeout(30)
-  ->back() // 从 HttpProfile 配置回到 HttpClientBuilder 对象继续配置
-  ->getClientProfile()->setSignMethod(ClientProfile::$SIGN_MD5)->setUUID("umethqdt2gm9")
-  ->setDeviceAdmin('admin')->setDevicePassword('admin');
+  HttpClient::configurator()->getHttpProfile()->setProtocol(HttpProfile::$REQ_HTTP)
+      ->setEndpoint("128.128.20.131:8011")->setReqMethod(HttpProfile::$REQ_POST)
+      ->setReqTimeout(30)
+      ->back() // 从 HttpProfile 配置回到 HttpClientBuilder 对象继续配置
+      ->getClientProfile()->setSignMethod(ClientProfile::$SIGN_MD5)->setUUID("umethqdt2gm9")
+      ->setDeviceAdmin('admin')->setDevicePassword('admin');
   
   try {
   
@@ -61,7 +61,7 @@ index文件会处理设备发送过来的注册、心跳、抓拍请求。
       print_r($resp->Name);
   
   } catch(DeviceSDKException $e) {
-        echo $e;
+      echo $e;
   }
   ```
 
