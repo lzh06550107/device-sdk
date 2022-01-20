@@ -2,7 +2,7 @@
 
 namespace JuLongDeviceHttp\Common\Profile;
 
-use JuLongDeviceHttp\DeviceClientBuilder;
+use JuLongDeviceHttp\HttpClientBuilder;
 
 /**
  * http相关参数类
@@ -73,7 +73,7 @@ class HttpProfile
     private $keepAlive;
 
     /**
-     * @var DeviceClientBuilder 构建器对象，目的是链式配置的时候可以回退
+     * @var HttpClientBuilder 构建器对象，目的是链式配置的时候可以回退
      */
     private $deviceClientBuilder;
 
@@ -208,18 +208,18 @@ class HttpProfile
     }
 
     /**
-     * @param DeviceClientBuilder $deviceClientBuilder
+     * @param HttpClientBuilder $deviceClientBuilder
      */
-    public function setDeviceClientBuilder(DeviceClientBuilder $deviceClientBuilder): void
+    public function setDeviceClientBuilder(HttpClientBuilder $deviceClientBuilder): void
     {
         $this->deviceClientBuilder = $deviceClientBuilder;
     }
 
     /**
      * 回退到DeviceClientBuilder对象继续配置
-     * @return DeviceClientBuilder
+     * @return HttpClientBuilder
      */
-    public function back() : DeviceClientBuilder {
+    public function back() : HttpClientBuilder {
         return $this->deviceClientBuilder;
     }
 

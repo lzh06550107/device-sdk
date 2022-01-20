@@ -19,7 +19,7 @@ use JuLongDeviceHttp\NVRManage\NVRManageClient;
 use JuLongDeviceHttp\ParamSetting\ParamSettingClient;
 
 // 设备客户端构建器
-final class DeviceClientBuilder
+final class HttpClientBuilder
 {
 
     /**
@@ -31,9 +31,9 @@ final class DeviceClientBuilder
      */
     private ClientProfile $clientProfile;
 
-    public static function builder() : DeviceClientBuilder
+    public static function builder() : HttpClientBuilder
     {
-        return new DeviceClientBuilder();
+        return new HttpClientBuilder();
     }
 
     /**
@@ -50,9 +50,9 @@ final class DeviceClientBuilder
 
     /**
      * @param HttpProfile $httpProfile
-     * @return DeviceClientBuilder
+     * @return HttpClientBuilder
      */
-    public function setHttpProfile(HttpProfile $httpProfile): DeviceClientBuilder
+    public function setHttpProfile(HttpProfile $httpProfile): HttpClientBuilder
     {
         $this->httpProfile = $httpProfile;
         return $this;
@@ -72,9 +72,9 @@ final class DeviceClientBuilder
 
     /**
      * @param ClientProfile $clientProfile
-     * @return DeviceClientBuilder
+     * @return HttpClientBuilder
      */
-    public function setClientProfile(ClientProfile $clientProfile): DeviceClientBuilder
+    public function setClientProfile(ClientProfile $clientProfile): HttpClientBuilder
     {
         $this->clientProfile = $clientProfile;
         return $this;
@@ -83,7 +83,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getBaseClient()
+    public function getBaseClient(): BasicClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new BasicClient($this->clientProfile);
@@ -92,7 +92,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getAccessControlPasswordClient()
+    public function getAccessControlPasswordClient(): AccessControlPasswordClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new AccessControlPasswordClient($this->clientProfile);
@@ -101,7 +101,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getAccessStrategyClient()
+    public function getAccessStrategyClient(): AccessStrategyClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new AccessStrategyClient($this->clientProfile);
@@ -110,7 +110,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getFaceCompareClient()
+    public function getFaceCompareClient(): FaceCompareClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new FaceCompareClient($this->clientProfile);
@@ -119,7 +119,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getFaceManageClient()
+    public function getFaceManageClient(): FaceManageClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new FaceManageClient($this->clientProfile);
@@ -128,7 +128,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getHealthCodeClient()
+    public function getHealthCodeClient(): HealthCodeClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new HealthCodeClient($this->clientProfile);
@@ -137,7 +137,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getNVRManageClient()
+    public function getNVRManageClient(): NVRManageClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new NVRManageClient($this->clientProfile);
@@ -146,7 +146,7 @@ final class DeviceClientBuilder
     /**
      * @throws Common\Exception\DeviceSDKException
      */
-    public function getParamSettingClient()
+    public function getParamSettingClient(): ParamSettingClient
     {
         $this->clientProfile->setHttpProfile($this->httpProfile);
         return new ParamSettingClient($this->clientProfile);

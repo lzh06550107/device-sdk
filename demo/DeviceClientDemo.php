@@ -5,12 +5,12 @@ use JuLongDeviceHttp\Basic\Models\JVTPlatformRequest;
 use JuLongDeviceHttp\Common\Exception\DeviceSDKException;
 use JuLongDeviceHttp\Common\Profile\ClientProfile;
 use JuLongDeviceHttp\Common\Profile\HttpProfile;
-use JuLongDeviceHttp\DeviceClient;
+use JuLongDeviceHttp\HttpClient;
 
-DeviceClient::configurator()->getHttpProfile()->setProtocol(HttpProfile::$REQ_HTTP)
+HttpClient::configurator()->getHttpProfile()->setProtocol(HttpProfile::$REQ_HTTP)
     ->setEndpoint("128.128.20.131:8011")->setReqMethod(HttpProfile::$REQ_POST)
     ->setReqTimeout(30)
-    ->back() // 从 HttpProfile 配置回到 DeviceClientBuilder 对象继续配置
+    ->back() // 从 HttpProfile 配置回到 HttpClientBuilder 对象继续配置
     ->getClientProfile()->setSignMethod(ClientProfile::$SIGN_MD5)->setUUID("umethqdt2gm9")
     ->setDeviceAdmin('admin')->setDevicePassword('admin');
 
@@ -34,7 +34,7 @@ try {
 
     // 通过client对象调用 JVTPlatform 方法发起请求。注意请求方法名与请求对象是对应的
     // 返回的resp是一个 JVTPlatformResponse 类的实例，与请求对象对应
-    $resp = DeviceClient::basicClient()->JVTPlatform($req);
+    $resp = HttpClient::basicClient()->JVTPlatform($req);
 
     var_dump($resp);
 
