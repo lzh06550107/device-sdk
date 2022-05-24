@@ -27,6 +27,5 @@ class ActiveCaptureResponse extends AbstractResponse
             $this->Data = $activeCapture;
         }
 
-
     }
 }

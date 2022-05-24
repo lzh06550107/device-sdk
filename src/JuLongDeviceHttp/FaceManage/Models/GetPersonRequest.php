@@ -7,6 +7,8 @@
 
 namespace JuLongDeviceHttp\FaceManage\Models;
 
+use JuLongDeviceHttp\FaceManage\FaceManageAction;
+
 /**
  * 获取名单列表
  * Created on 2021/12/28 16:13
@@ -21,7 +23,7 @@ class GetPersonRequest extends PersonListRequest
 
     public function __construct()
     {
-        $this->Data["Action"] = "getPerson";
+        $this->Data["Action"] = FaceManageAction::GET_PERSON;
     }
 
     // 给一个未定义的属性赋值时调用

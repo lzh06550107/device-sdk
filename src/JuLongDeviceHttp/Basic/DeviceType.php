@@ -15,23 +15,23 @@ namespace JuLongDeviceHttp\Basic;
 class DeviceType
 {
     /**
-     * @var int 抓拍机
+     * 抓拍机
      */
-    public static $CAPTURE_MACHINE = 1;
+    public const CAPTURE_MACHINE = 1;
     /**
-     * @var int 比对机
+     * 比对机
      */
-    public static $COMPARE_MACHINE = 2;
+    public const COMPARE_MACHINE = 2;
     /**
-     * @var int NVR
+     * NVR
      */
-    public static $NVR = 3;
+    public const NVR = 3;
     /**
-     * @var int 比对服务器
+     * 比对服务器
      */
-    public static $COMPARE_SERVER = 4;
+    public const COMPARE_SERVER = 4;
     /**
-     * @var int 门禁机
+     * 门禁机
      */
-    public static $ACCESS_CONTROL_MACHINE = 5;
+    public const ACCESS_CONTROL_MACHINE = 5;
 }

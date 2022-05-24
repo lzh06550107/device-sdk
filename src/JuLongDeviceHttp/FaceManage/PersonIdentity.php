@@ -10,25 +10,25 @@ namespace JuLongDeviceHttp\FaceManage;
 class PersonIdentity
 {
     /**
-     * @var int 所有分类
+     * 所有分类
      */
-    public static $ALL = 0;
+    public const ALL = 0;
     /**
-     * @var int 老师
+     * 老师
      */
-    public static $TEACHER = 1;
+    public const TEACHER = 1;
     /**
-     * @var int 走读学生
+     * 走读学生
      */
-    public static $DAY_STUDENT = 2;
+    public const DAY_STUDENT = 2;
     /**
-     * @var int 寄宿学生
+     * 寄宿学生
      */
-    public static $BOARDING_STUDENT = 3;
+    public const BOARDING_STUDENT = 3;
     /**
-     * @var int 访客
+     * 访客
      */
-    public static $VISITOR  = 4;
+    public const VISITOR  = 4;
 
     public static function getPersonGroupNameById(int $id) {
         $GroupNames = [

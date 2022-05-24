@@ -95,7 +95,7 @@ class PersonInfo extends AbstractModel
      */
     public $FeatureValue;
     /**
-     * @var StudentsInfo 分班播报学生信息列表
+     * @var StudentInfo[] 分班播报学生信息列表
      */
     public $StudentsInfo;
 
@@ -193,8 +193,12 @@ class PersonInfo extends AbstractModel
         }
 
         if (array_key_exists("StudentsInfo",$param) and $param["StudentsInfo"] !== null) {
-            $studentsInfo = new StudentsInfo();
-            $studentsInfo->deserialize($param['StudentsInfo']);
+            $studentsInfo = [];
+            foreach ($param['StudentsInfo'] as $student) {
+                $studentInfo = new StudentInfo();
+                $studentInfo->deserialize($student);
+                $studentsInfo[] = $studentInfo;
+            }
             $this->StudentsInfo = $studentsInfo;
         }
 

@@ -31,11 +31,6 @@ final class HttpClientBuilder
      */
     private ClientProfile $clientProfile;
 
-    public static function builder() : HttpClientBuilder
-    {
-        return new HttpClientBuilder();
-    }
-
     /**
      * @return HttpProfile
      */

@@ -10,19 +10,19 @@ namespace JuLongDeviceHttp\FaceManage;
 class PersonType
 {
     /**
-     * @var int 所有名单
+     * 所有名单
      */
-    public static $ALL_FACE = 0;
+    public const ALL_FACE = 0;
     /**
-     * @var int 黑名单
+     * 黑名单
      */
-    public static $BLACK_FACE = 1;
+    public const BLACK_FACE = 1;
     /**
-     * @var int 白名单
+     * 白名单
      */
-    public static $WHITE_FACE = 2;
+    public const WHITE_FACE = 2;
     /**
-     * @var int VIP名单
+     * VIP名单
      */
-    public static $VIP_FACE = 3;
+    public const VIP_FACE = 3;
 }

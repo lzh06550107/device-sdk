@@ -40,8 +40,8 @@ try {
     // 需要设备开启注册
     $req->Session = 'fdjlsfjeowjfldsfa';
 
-    $req->AddType = PersonAddType::$IMAGE_ADD;
-    $req->PersonType = PersonType::$WHITE_FACE;
+    $req->AddType = PersonAddType::IMAGE_ADD;
+    $req->PersonType = PersonType::WHITE_FACE;
     $addPersonInfo = new AddPersonInfo();
     $addPersonInfo->PersonCover = 1;
     $addPersonInfo->PersonId = "1";
